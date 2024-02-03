@@ -9,4 +9,18 @@ return {
   --     require("lsp_signature").setup()
   --   end,
   -- },
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {},
+    -- specify when the plug in should be loaded
+    event = "User Astrofile",
+    -- specify what commands could also be ran to load the plugin
+    cmd = { "TodoQuickFix" },
+    -- create mappings for the plugin
+    keys = {
+      { "<leader>T", "<cmd>TodoTelescope<cr>", desc = "Open TODOs in Telescope"},
+    },
+  }
 }
+
