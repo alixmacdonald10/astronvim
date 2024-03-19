@@ -10,7 +10,11 @@ return {
   -- language packs
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.pack.python" },
-  
+  { import = "astrocommunity.pack.yaml" },
+  { import = "astrocommunity.pack.markdown" },
+  { import = "astrocommunity.pack.docker" }, 
+  { import = "astrocommunity.pack.terraform" }, 
+
   -- completion
-  { import = "astrocommunity.completion.copilot-lua"},
+  -- { import = "astrocommunity.completion.copilot-lua"},
 }

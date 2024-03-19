@@ -26,6 +26,10 @@ return {
     underline = true,
   },
 
+  plugins = {
+    { "jay-babu/mason-nvim-dap.nvim", enabled = true },
+  },
+ 
   lsp = {
     -- customize lsp formatting options
     formatting = {
@@ -36,7 +40,7 @@ return {
           -- "go",
         },
         ignore_filetypes = { -- disable format on save for specified filetypes
-          -- "python",
+          "python", "rust"
         },
       },
       disabled = { -- disable formatting capabilities for the listed language servers
@@ -81,5 +85,7 @@ return {
     --     ["~/%.config/foo/.*"] = "fooscript",
     --   },
     -- }
+    vim.o.wrap = true -- Enables wrapping
+    vim.wo.linebreak = true -- Wrap lines at convenient points
   end,
 }
