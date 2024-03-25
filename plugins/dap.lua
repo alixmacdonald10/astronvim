@@ -12,7 +12,6 @@ return {
     local dap = require "dap"
     local CODELLDB_DIR = require("mason-registry").get_package("codelldb"):get_install_path()
       .. "/extension/adapter/codelldb"
-    local PYTHON_DIR = ".venv/Scripts/python"
 
     dap.adapters.codelldb = {
       name = "codelldb",
@@ -24,23 +23,6 @@ return {
         args = { "--port", "${port}" },
       },
       detatched = false,
-    }
-    dap.adapters.py = {
-      -- name = 'py',
-      type = "executable",
-      command = PYTHON_DIR,
-      args = { "-m", "debugpy.adapter" },
-      detatched = false,
-    }
-    -- configurations --
-
-    dap.configurations.python = {
-      {
-        name = "Launch file",
-        type = "py", -- the type here established the link to the adapter definition: `dap.adapters.python`
-        request = "launch",
-        program = "${file}", -- This configuration will launch the current file if used.
-      },
     }
 
     local function set_program()
